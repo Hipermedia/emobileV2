@@ -41,9 +41,9 @@ get_header(); ?>
 					</select>
 				</div>
 
-				<div class="col-sm-2">
+				<div class="grado col-sm-2">
 					<label for="grado">Grado</label>
-					<select id="grado" class="grado form-control" name="grado">
+					<select id="grado" class="form-control" name="grado">
 						<option value=""></option>
 						<option <?php echo ($grado == '1°') ? 'selected' : '' ?> value="1°">1°</option>
 						<option <?php echo ($grado == '2°') ? 'selected' : '' ?> value="2°">2°</option>
@@ -54,18 +54,18 @@ get_header(); ?>
 					</select>
 				</div>
 
-				<div class="col-sm-2">
+				<div class="asignatura col-sm-2">
 					<label for="asignatura">Asignatura</label>
-					<select class="asignatura form-control" name="asignatura">
+					<select class="form-control" name="asignatura">
 						<option value=""></option>
 						<option <?php echo ($asignatura == 'Español') ? 'selected' : '' ?> value="Español">Español</option>
 						<option <?php echo ($asignatura == 'Matemáticas') ? 'selected' : '' ?> value="Matemáticas">Matemáticas</option>
 					</select>
 				</div>
 				
-				<div class="col-sm-2">
+				<div class="bloque col-sm-2">
 					<label for="bloque">Bloque</label>
-					<select class="bloque block form-control" name="bloque">
+					<select class="block form-control" name="bloque">
 						<option value=""></option>
 						<option <?php echo ($bloque == 'I') ? 'selected' : '' ?> value="I">I</option>
 						<option <?php echo ($bloque == 'II') ? 'selected' : '' ?> value="II">II</option>
@@ -176,7 +176,7 @@ get_header(); ?>
 		         		<i class="fa fa-user fa-x5"></i>
 		         	</div>
 		         	<div class="col-sm-7">
-		         		<strong><?php echo $planeacion['autor']; ?></strong>
+		         		<strong><a href="<?php echo $planeacion['url_perfil_autor']; ?>"><?php echo $planeacion['autor']; ?></a></strong>
 		         	</div>
 						<div class="col-xs-3">
 						    <a class="btn btn-default btn-sm borrar" href="<?php echo $planeacion['url_imp_pdf']; ?>" target="_blank">

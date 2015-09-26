@@ -1659,6 +1659,8 @@ function get_plans($inargs = array()) {
 				'asignatura'		=> get_field('pl_asignatura'),
 				'bloque'			=> get_field('pl_bloque'),
 				'topico_generativo' => get_field('pl_topico_g'),
+				'aprendizaje_esperado' => get_field('pl_aprendizaje_esp'),
+
 				'autor' => get_the_author_meta('p_nombre') . ' ' . get_the_author_meta('p_apellido_p') . ' ' . get_the_author_meta('p_apellido_m'),
 				'url_imp_pdf' => get_inicio_url() . '/imprimir-planeacion/?id_planeacion='.get_the_ID(),
 				'url_perfil_autor' => get_inicio_url() . '/perfil-autor/?id_autor='.get_the_author_meta('ID'),
