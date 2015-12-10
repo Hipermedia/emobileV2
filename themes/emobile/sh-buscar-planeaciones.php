@@ -7,7 +7,7 @@
  * @subpackage EMobile
  * @since EMobile 1.0
  */
-
+user_redirect();
 get_header(); ?>
 <?php //print_array($_POST); ?>
 <?php //show_errors(); ?>
@@ -76,7 +76,7 @@ get_header(); ?>
 				</div>
 				
 				<div class="col-sm-2 custom-col">
-					<input class="custom-btn btn btn-default btn-sm borrar" type="submit" name="consultar" value="Filtrar">
+					<input id="consultar-btn" class="custom-btn btn btn-default btn-sm borrar" type="submit" name="consultar" value="Filtrar">
 				</div>
 			</div>
 		</form>
@@ -135,12 +135,12 @@ get_header(); ?>
 		<?php if ($planeaciones) { ?>
 	   <?php foreach ($planeaciones as $planeacion) { ?>
 	   <?php //echo '<pre style="display:block;">'; print_r($planeacion); echo '</pre>'; // PRINT_R ?>
-			<div class="col-md-6">
+			<div class="col-md-6 custom-col-md-6">
 		    	<div class="planeacion">
 					<div class="row group">
 	
 		             <!-- icono de planeación  -->
-		            <div class="col-sm-2">
+		            <div class="custom-asignatura-icon col-sm-2">
 		               <?php if ($planeacion['asignatura'] == 'Español') { ?>
 		                  <span class="ico-planeacion ico-esp"></span> 
 		               <?php } else { ?>
@@ -154,8 +154,8 @@ get_header(); ?>
 		            </div>
 
 		            <!-- Grado -->
-		            <div class="col-sm-2">
-		               <strong class="custom-grado"><?php echo $planeacion['grado']; ?> grado</strong>
+		            <div class="custom-grado col-sm-2">
+		               <strong><?php echo $planeacion['grado']; ?> grado</strong>
 		            </div>
 	
 		             <!-- Asignatura -->
@@ -172,10 +172,10 @@ get_header(); ?>
 		         <p class="aprendizaje group"><?php echo $planeacion['topico_generativo']; ?></p>
 	
 		         <div class="row group">
-		         	<div class="col-sm-2">
+		         	<div class="custom-icon col-sm-2">
 		         		<i class="fa fa-user fa-x5"></i>
 		         	</div>
-		         	<div class="col-sm-7">
+		         	<div class="custom-autor col-sm-7">
 		         		<strong><a href="<?php echo $planeacion['url_perfil_autor']; ?>"><?php echo $planeacion['autor']; ?></a></strong>
 		         	</div>
 						<div class="col-xs-3">

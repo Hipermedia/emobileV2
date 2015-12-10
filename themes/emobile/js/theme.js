@@ -1,6 +1,10 @@
 jQuery(document).ready(function($) {
 
-
+		$('.toggle-nav').click(function(e) {
+	        $(this).toggleClass('activo');
+	        $('#header ul').toggleClass('activo'); 
+	        e.preventDefault();
+	    });
 
 	// función para desplazamiento lento en enlaces dentro del mismo documento
 	$(function(){
@@ -79,6 +83,10 @@ jQuery(document).ready(function($) {
 	});
 
 	//fin
+
+	if ($('#mjs-registrado').length) {
+	    $('#formulario-registro').hide();
+	}
 
 
 });

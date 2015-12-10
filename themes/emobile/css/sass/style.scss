@@ -103,6 +103,28 @@ Text Domain: shbase
 			.col-sm-2 {
 				text-align: center;
 			}
+
+			.custom-icon {
+				padding-right: 0;
+				width: 10%;
+			}
+
+			.custom-autor {
+				padding-left: 0;
+
+				a {
+					color: $verde;
+				}
+			}
+
+			.custom-asignatura-icon {
+				width: 11%;
+				padding: 0;
+			}
+
+			.custom-grado {
+				width: 22%;
+			}
 		}
 	}
 
@@ -623,15 +645,114 @@ Text Domain: shbase
 	}
 }
 
-.custom-grado {
-	font-size: 13px;
-}
-
-
 .default-img {
 	padding: 1rem;
 
 	img {
 		@include rounded;
+	}
+}
+
+#mjs-registrado {
+	font-size: 1.5rem;
+	line-height: 1.5;
+	padding: 1rem 0;
+}
+
+.custom-col-md-6 {
+	display: inline-block;
+	vertical-align: top;
+	width: 49%;
+	float: none;
+}
+
+
+.Constancias {
+
+	figure {
+		position: relative;
+		max-height: 200px;
+		overflow: hidden;
+
+		img {
+
+		}
+
+		figcaption {
+			position: absolute;
+			width: 1100px;
+			height: 50%;
+			overflow: auto;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			h2 {
+				font-size: 4rem;
+				text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.55);
+				color: #EDF5FA;
+			}
+		}
+	}
+
+	.wrapper {
+		width: 1100px;
+		display: block;
+		margin: 0 auto;
+		background: white;
+		padding: 2rem;
+
+		.formulario {
+			padding: 2rem;
+			border-radius: 0.5em;
+			background: transparent -moz-linear-gradient(center top , #F5F5F5 0%, #EFEFEF 100%) repeat scroll 0% 0%;
+			border: 1px solid #D8D8D8;
+			/*padding: 1em;*/
+			box-shadow: 0px 10px 6px -6px #777;
+
+			p {
+				font-size: 1.2rem;
+			}
+
+			.form-inline {
+
+				.foto {
+					margin-right: 3rem;
+					background-image: url('images/foro.jpg');
+					background-position: center;
+					display: inline-block;
+					vertical-align: middle;
+					border-radius: 50%;
+					width: 150px;
+					height: 150px;
+
+					img {
+						/*border-radius: 50%;*/
+					}
+				}
+
+				.form-control {
+					height: 34px;
+					padding: 6px 12px;
+					font-size: 14px;
+					line-height: 1.42857;
+					color: #555;
+					background-color: #FFF;
+					background-image: none;
+					border: 1px solid #CCC;
+					border-radius: 4px;
+					box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+					transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+					
+					&:focus {
+						border-color: #66AFE9;
+						outline: 0px none;
+						box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+					}
+				}
+			}
+		}
 	}
 }

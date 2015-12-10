@@ -1,4 +1,7 @@
 .landing {
+	@media (max-width: 1100px) {
+		overflow: hidden;
+	}
 	
 	/*boton global*/
 	.boton {
@@ -20,12 +23,16 @@
 
 	.primero {
 		padding-top: 5rem;
+		padding-bottom: 1rem;
 		text-align: center;
 		position: relative;
-		background-image: url("images/landing/bg-primero.png");
+		background-image: url("images/bg-mobile-apple2.jpg");
 		background-size: 100%;
 		background-repeat: no-repeat;
-		height: 630px;
+		/*height: 630px;*/
+		@media (max-width: 1100px) {
+			padding: 1.5rem 0;
+		}
 		@media (max-width: 768px) {
 			height: auto;
 			padding: 1rem;
@@ -36,13 +43,17 @@
 		.wrapper {
 			width: 1170px;
 			margin: 0 auto;
-			@media (max-width: 1000px) {
+			position: relative;
+			@media (max-width: 1100px) {
 				width: 100%;
 			}
 
 			.texto,.imagen { 
 				width: 49.5%; 
 				display: inline-block;
+				@media (max-width: 1100px) {
+					vertical-align: middle;
+				}
 				@media (max-width: 768px) {
 				 	width: 100%;
 				 	text-align: center;
@@ -59,18 +70,48 @@
 				 } 
 
 				h2, h3 { padding-bottom: 1.5rem; }
+
+				.btn-entrar {
+					background: $verde;
+
+					&:hover {
+						background: $verde-oscuro-landing;
+					}
+				}
 			}
 
 			img {
-				height: 450px;
+				/*height: 450px;*/
+				@media (max-width: 1100px) {
+					width: 80%;
+				}
 				@media (max-width: 768px) {
 					height: auto;
 					width: 40%;
-					-webkit-transform: rotate(90deg);
-						-moz-transform: rotate(90deg);
-						rotation: 90deg;
-						filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 				} 
+			}
+		
+			.aviso {
+				position: absolute;
+				left: 5rem;
+				bottom: 0rem;
+				font-size: 2rem;
+				@media (max-width: 1100px) {
+					display: none;
+				}
+
+				a {
+					color: white;
+
+					&::after {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 2px;
+						background: white;
+						margin-top: .5rem;
+					}
+				}
 			}
 		}
 	}
@@ -84,7 +125,7 @@
 		.wrapper {
 			width: 1170px;
 			margin: 0 auto;
-			@media (max-width: 1000px) {
+			@media (max-width: 1100px) {
 				width: 100%;
 			}
 
@@ -106,9 +147,15 @@
 
 				.imagen {
 					vertical-align: top;
-					height: 200px;
+					/*height: 200px;
 					width: 200px;
-					margin: 0 auto;
+					margin: 0 auto;*/
+
+					img {
+						width: 250px;
+						height: 250px;
+						border-radius: 50%;
+					}
 				}
 
 				p { 
@@ -153,6 +200,10 @@
 			@media (max-width: 768px) {
 				width: 100%;
 			}
+
+			img {
+				width: 100%;
+			}
 		}
 	}
 
@@ -185,12 +236,19 @@
 		.wrapper {
 			width: 1170px;
 			margin: 0 auto;
-			@media (max-width: 1000px) {
+			@media (max-width: 1100px) {
 				width: 100%;
 			}
 
+			h2 {
+				font-size: 2.5rem;
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+
 			.imagen,.texto { 
-				width: 49.5%; display: inline-block;
+				width: 100%; 
+				display: inline-block;
 				@media (max-width: 768px) {
 					width: 100%;
 					text-align: center;
@@ -200,29 +258,43 @@
 			.texto {
 				vertical-align: top;
 				padding: 1rem;
+				text-align: center;
 
-				h2,h3 { color: #2F5E4E; padding-bottom: 1.5rem; }
+				h2,h3 { color: #2F5E4E; padding-bottom: 1.5rem; font-size: 3rem; }
 
 				.boton {
-					color: #2F5E4E;
+					color: white;
 					min-width: 120px;
 					text-decoration: none;
 					padding: .8rem;
 					border-radius: 5px;
 					border: 1px #2F5E4E solid;
+					background: #00A24F;
 				}
 
 				.boton:hover { background: #2F5E4E; color: white; }
 			}
 
-			img { display: block; margin: 0 auto; }
+			img { 
+				display: block; 
+				margin: 0 auto; 
+			}
+
+			#page_1,#page_2,#page_3,#page_4,#page_5 {
+				margin: 0 0 5rem !important;
+				width: 100% !important;
+			}
+
+			.t0,.t1,.t2,.t3,.t4 {
+				width: 100% !important;
+			}
 		}
 	}
 
 	.registro {
 		width: 100%;
 		padding: 3rem 0 3rem 0;
-		background: $verde-claro-landing;
+		background: $verde-oscuro-landing;
 		color: white;
 
 		.wrapper {
@@ -237,6 +309,9 @@
 				display: inline-block;
 				width: 49%;
 				padding: 0 1rem;
+				@media (max-width: 768px) {
+					width: 100%;
+				}
 
 				h2 {
 					margin-bottom: 1rem;
@@ -252,9 +327,16 @@
 				vertical-align: top;
 				display: inline-block;
 				width: 50%;
+				@media (max-width: 768px) {
+					width: 100%;
+				}
 
 				img {
-					width: 100%;
+					border-radius: 50%;
+					height: 370px;
+					width: 370px;
+					display: block;
+					margin: 0 auto;
 				}
 			}
 		}
@@ -276,7 +358,7 @@
 
 		label {
 			display: block;
-			width: 20%;
+			/*width: 20%;*/
 			margin-bottom: .5rem;
 		}
 

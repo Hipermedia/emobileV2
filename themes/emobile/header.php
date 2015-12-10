@@ -88,18 +88,31 @@
           </button>
 
         <div class="collapse navbar-collapse">
-          <?php 
-            if ( is_home() || is_page_template('sh-page-landing.php') ) {
-                $args = array('menu' => 'Login', 'menu_class'  => 'nav  nav-pills pull-right', 'container'   => 'false');
-                                wp_nav_menu( $args );
-            } else {
-                 $args = array('menu' => 'Participante', 'menu_class'  => 'nav  nav-pills pull-right', 'container'   => 'false');
-                                wp_nav_menu( $args );
-            }
-            
+          <?php if(is_user_logged_in()) { ?>
+            <?php  $current_user = wp_get_current_user(); ?>
+            <?php if(get_user_meta($current_user->ID, 'p_rfc')) { ?>
+            <?php
+              $args = array('menu' => 'Participante', 'menu_class'  => 'nav  nav-pills pull-right', 'container'   => 'false');
+                             wp_nav_menu( $args );
+            } else { ?>
 
+              <ul class="nav  nav-pills pull-right">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="<?php echo home_url().'/buscar-planeaciones/' ?>">Buscar planeaciones</a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                  <a href="<?php echo wp_logout_url(); ?>">Cerrar sesión</a>
+                </li>
+              </ul>
 
-          ?>
+            <?php } ?>
+
+          <?php } else { ?>
+            <ul class="nav  nav-pills pull-right">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#registrar">Registrarse</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="" data-toggle="modal" data-target="#entrar">Ingresar</a></li>
+            </ul>
+          <?php } ?>
         </div><!--/.navbar-collapse -->
     </nav>
   </header>

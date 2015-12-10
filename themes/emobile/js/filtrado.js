@@ -55,6 +55,4 @@ jQuery(document).ready(function($) {
 				$(".bloque").hide();
 		}
 	});
-
-
 });

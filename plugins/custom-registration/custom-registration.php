@@ -69,7 +69,7 @@ function in_registration_form( $fname, $email, $password, $ciudad, $estado, $tip
 	}
 	</style>
     <form action="<?php $_SERVER['REQUEST_URI'] ?>" method="post">
-  		<div class="form-group">
+  		<div id="formulario-registro" class="form-group">
   		  <div class="input-group">
   		  	<!-- <label for="firstname">Nombre completo </label> -->
   		  	<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -213,7 +213,7 @@ function in_complete_registration() {
         wp_set_auth_cookie($user_id);
         do_action('wp_login', $user_login);*/
 		
-        echo '¡Te registraste exitosamente! Ya puedes iniciar sesión <a href="" data-toggle="modal" data-target="#entrar">aquí</a>.';
+        echo '<p id="mjs-registrado">¡Te registraste exitosamente! Ya puedes iniciar sesión <a href="" data-toggle="modal" data-target="#entrar">aquí</a></p>.';
 	}
 }
 
